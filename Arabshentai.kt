@@ -4,6 +4,6 @@ import eu.kanade.aniyomi.multisrc.videosource.VideoSource
 
 class Arabshentai : VideoSource(
     "Arabshentai",
-    "https://arabshentai.com"
+    "https://arabshentai.com",
     "ar"
 )
