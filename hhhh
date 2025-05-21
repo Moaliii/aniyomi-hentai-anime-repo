@@ -1,0 +1,9 @@
+{
+  "name": "arabshentai",
+  "version": "1.0.0",
+  "description": "مصدر فيديوهات هنتاي مترجمة من nxxhentai.com لـ Aniyomi",
+  "language": "ar",
+  "type": "anime",
+  "id": "arabshentai",
+  "author": "OpenAI (بتنسيق مع المستخدم)"
+}
