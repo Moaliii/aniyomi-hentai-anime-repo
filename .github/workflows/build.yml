@@ -25,6 +25,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y unzip
+          cd arabshentai
+          chmod +x gradlew
           ./gradlew assembleRelease
 
       - name: Upload APK
