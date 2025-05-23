@@ -30,7 +30,7 @@ jobs:
           ./gradlew assembleRelease
 
       - name: Upload APK
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: arabshentai-apk
           path: arabshentai/**/build/outputs/apk/release/*.apk
