@@ -1,1 +1,37 @@
+name: Build arabshentai.apk
+
+on:
+  push:
+    paths:
+      - '**.kt'
+      - '.github/workflows/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: 17
+
+      - name: Install dependencies & build APK
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y unzip
+          cd arabshentai
+          chmod +x gradlew
+          ./gradlew assembleRelease
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: arabshentai-apk
+          path: "**/build/outputs/apk/release/*.apk"
 
