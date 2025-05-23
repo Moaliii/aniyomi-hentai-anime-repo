@@ -6,3 +6,4 @@ class Arabshentai : VideoSource(
     "Arabshentai",
     "https://arabshentai.com",
     "ar"
+)
