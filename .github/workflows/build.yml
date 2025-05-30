@@ -1,0 +1,34 @@
+name: Build arabshentai.apk
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '**.kt'
+      - '.github/workflows/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: 17
+
+      - name: Give Gradle permission
+        run: chmod +x gradlew
+
+      - name: Build APK
+        run: ./gradlew assembleRelease
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: arabshentai-apk
+          path: '**/build/outputs/apk/release/*.apk'
